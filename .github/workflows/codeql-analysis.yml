@@ -64,9 +64,9 @@ jobs:
     #    uses a compiled language
 
     - run: |
-        pip install -r requirements.txt
-        pip install -r requirements-dev.txt
-        pip install .
+        pip3 install -r requirements.txt
+        pip3 install -r requirements-dev.txt
+        pip3 install .
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v1
