@@ -3,8 +3,8 @@
 
 ## Requirements
 - Requires PostgreSQL Server
-- Requires Python 3.7 or higher
-- [**Optional**] Requires PyPy 3.7 or higher
+- Requires Python 3.8 or higher
+- [**Optional**] Requires PyPy 3.8 or higher
 
 
 ## **Installing**
@@ -20,7 +20,7 @@
 
 Distributed under the [**MIT License**](https://github.com/zeroday0619/HQME/blob/main/LICENSE):
 
-Copyright © 2021 [Euiseo Cha](https://github.com/zeroday0619)
+Copyright © 2021 [zeroday0619](https://github.com/zeroday0619)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
