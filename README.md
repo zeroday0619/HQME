@@ -1,18 +1,20 @@
 # **HQME**
+
 > high-quality music extension for [**discord.py**](https://github.com/Rapptz/discord.py)
 
 ## Requirements
+
 - Requires PostgreSQL Server
 - Requires Python 3.8 or higher
 - [**Optional**] Requires PyPy 3.8 or higher
 
-
 ## **Installing**
+
 > TODO
 
 ## **Quick Example**
-> TODO
 
+> TODO
 
 ## **License**
 

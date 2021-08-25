@@ -1,0 +1,15 @@
+site_name: "HQME"
+
+# mkdocs.yml
+theme:
+  name: "readthedocs"
+
+plugins:
+- search
+- mkdocstrings:
+    handlers:
+      python:
+        selection:
+          filters:
+            - "^__init__$"
+            - "^__main__$"

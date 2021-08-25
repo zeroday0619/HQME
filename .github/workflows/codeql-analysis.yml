@@ -64,6 +64,8 @@ jobs:
     #    uses a compiled language
 
     - run: |
+        pip3 install --upgrade pip
+        pip3 install flit wheel
         pip3 install -r requirements.txt
         pip3 install -r requirements-dev.txt
         pip3 install .
