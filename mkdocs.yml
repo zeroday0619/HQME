@@ -1,15 +1,23 @@
 site_name: "HQME"
 
+nav:
+  - Home: index.md
+  - API: API.md
 # mkdocs.yml
 theme:
-  name: "readthedocs"
+  name: "material"
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+
+
 
 plugins:
 - search
-- mkdocstrings:
-    handlers:
-      python:
-        selection:
-          filters:
-            - "^__init__$"
-            - "^__main__$"
+- mkdocstrings

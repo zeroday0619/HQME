@@ -22,3 +22,4 @@ High-quality music extension for [**discord.py**](https://github.com/Rapptz/disc
 ## Quick Example
 
 > TODO
+
