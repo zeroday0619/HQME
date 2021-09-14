@@ -1,5 +1,5 @@
-discord.py @ git+https://github.com/Rapptz/discord.py
-databases[postgresql]==0.4.3
-validator-collection==1.5.0
-spotify-uri==1.0.3
-pydantic==1.8.2
+enhanced-dpy>=1.7.3.7.post1
+databases[postgresql]>=0.4.3
+validator-collection>=1.5.0
+spotify-uri>=1.0.3
+pydantic>=1.8.2

@@ -1,3 +1,3 @@
-from hqme.ext.youtube.info import YouTubeService
+from hqme.ext.youtube.info import YouTube
 
-__all__ = ["YouTubeService"]
+__all__ = ["YouTube"]

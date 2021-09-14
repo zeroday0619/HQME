@@ -1,7 +1,7 @@
 import re
 
 
-def cleanText(readData) -> str:
+def cleanText(readData: str) -> str:
     r"""
     Cleans text from unwanted characters.
 
@@ -11,4 +11,5 @@ def cleanText(readData) -> str:
     Returns:
         str: Cleaned text.
     """
-    return re.sub("[-=+,#/\?:^$.@*\"※~&%ㆍ!』\\‘|\(\)\[\]\<\>`'…》]", "", readData)
+    cleanTxt = re.sub("[-=+,#/\?:^$.@*\"※~&%ㆍ!』\\‘|\(\)\[\]\<\>`'…》]", "", readData)
+    return cleanTxt

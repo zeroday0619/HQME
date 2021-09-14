@@ -1,11 +1,10 @@
 site_name: "HQME"
 
-nav:
-  - Home: index.md
-  - API: API.md
 # mkdocs.yml
 theme:
   name: "material"
+  locale: en
+  highlightjs: true
   palette:
     - scheme: default
       toggle:
@@ -16,8 +15,23 @@ theme:
         icon: material/toggle-switch
         name: Switch to light mode
 
+nav:
+  - Home: index.md
+  - User Guide: 
+      overview: '/user-guide/overview'
+  - Developer Guide:
+      overview: '/developer-guide/overview'
+  - API Reference: API.md
 
+markdown_extensions:
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.tabbed
+  - admonition
+  - pymdownx.betterem:
+      smart_enable: all
 
 plugins:
-- search
-- mkdocstrings
+  - search
+  - mkdocstrings
