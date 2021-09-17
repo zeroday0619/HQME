@@ -110,3 +110,7 @@ class VideoUrlNotFound(Exception):
     """
     Raised when the video url of a video cannot be found.
     """
+
+
+class SearchListNotFound(Exception):
+    pass
