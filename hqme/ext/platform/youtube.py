@@ -96,7 +96,7 @@ class YouTube:
         Returns:
             The title of the video.
         """
-
+        nonlocal entries
         if self.data is None:
             await self.sync()
 
@@ -118,7 +118,7 @@ class YouTube:
         Returns:
             The description of the video.
         """
-
+        nonlocal entries
         if self.data is None:
             await self.sync()
 
@@ -139,6 +139,7 @@ class YouTube:
         Returns:
             The duration of the video.
         """
+        nonlocal entries
 
         if self.data is None:
             await self.sync()
@@ -161,7 +162,7 @@ class YouTube:
         Returns:
             The uploader of the video.
         """
-
+        nonlocal entries
         if self.data is None:
             await self.sync()
 
@@ -182,7 +183,7 @@ class YouTube:
         Returns:
             The upload date of the video.
         """
-
+        nonlocal entries
         if self.data is None:
             await self.sync()
 
@@ -204,7 +205,7 @@ class YouTube:
         Returns:
             The upload time of the video.
         """
-
+        nonlocal entries
         if self.data is None:
             await self.sync()
 
@@ -225,7 +226,7 @@ class YouTube:
         Returns:
             The thumbnail of the video.
         """
-
+        nonlocal entries
         if self.data is None:
             await self.sync()
 
@@ -246,7 +247,7 @@ class YouTube:
         Returns:
             The view count of the video.
         """
-
+        nonlocal entries
         if self.data is None:
             await self.sync()
 
@@ -267,7 +268,7 @@ class YouTube:
         Returns:
             The like count of the video.
         """
-
+        nonlocal entries
         if self.data is None:
             await self.sync()
 
@@ -288,7 +289,7 @@ class YouTube:
         Returns:
             The dislike count of the video.
         """
-
+        nonlocal entries
         if self.data is None:
             await self.sync()
 
@@ -309,7 +310,7 @@ class YouTube:
         Returns:
             The comment count of the video.
         """
-
+        nonlocal entries
         if self.data is None:
             await self.sync()
 
@@ -330,7 +331,7 @@ class YouTube:
         Returns:
             The categories of the video.
         """
-
+        nonlocal entries
         if self.data is None:
             await self.sync()
 
@@ -351,7 +352,7 @@ class YouTube:
         Returns:
             The tags of the video.
         """
-
+        nonlocal entries
         if self.data is None:
             await self.sync()
 
@@ -372,7 +373,7 @@ class YouTube:
         Returns:
             The uploader id of the video.
         """
-
+        nonlocal entries
         if self.data is None:
             await self.sync()
 
@@ -393,7 +394,7 @@ class YouTube:
         Returns:
             The uploader url of the video.
         """
-
+        nonlocal entries
         if self.data is None:
             await self.sync()
 
@@ -414,7 +415,7 @@ class YouTube:
         Returns:
             The channel id of the video.
         """
-
+        nonlocal entries
         if self.data is None:
             await self.sync()
 
@@ -435,7 +436,7 @@ class YouTube:
         Returns:
             The channel url of the video.
         """
-
+        nonlocal entries
         if self.data is None:
             await self.sync()
 
@@ -456,7 +457,7 @@ class YouTube:
         Returns:
             The channel title of the video.
         """
-
+        nonlocal entries
         if self.data is None:
             await self.sync()
 
@@ -477,7 +478,7 @@ class YouTube:
         Returns:
             The video url of the video.
         """
-
+        nonlocal entries
         if self.data is None:
             await self.sync()
 
