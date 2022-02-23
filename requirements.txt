@@ -3,4 +3,4 @@ validator-collection
 spotify-uri>=1.0.3
 pydantic>=1.8.2
 git+https://github.com/Pycord-Development/pycord.git
-yt-dlp
+youtubd-dl

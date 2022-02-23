@@ -1,7 +1,7 @@
 import asyncio
 import functools
 
-import yt_dlp
+import youtube_dl
 from hqme.exceptions.youtube import (
     CategoryNotFound,
     ChannelIdNotFound,
@@ -24,10 +24,10 @@ from hqme.exceptions.youtube import (
     ViewCountNotFound,
 )
 from validator_collection.checkers import is_url
-from yt_dlp import YoutubeDL
+from youtube_dl import YoutubeDL
 
-yt_dlp.utils.bug_reports_message = lambda: ""
-yt_dl = YoutubeDL()
+youtube_dl.utils.bug_reports_message = lambda: ""
+yt_dl = YoutubeDL(params={})
 
 
 class YouTube:

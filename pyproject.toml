@@ -14,7 +14,7 @@ classifiers = [
 ]
 
 requires = [
-    "yt-dlp",
+    "youtube-dl",
     "databases[postgresql]",
     "validator-collection",
     "spotify-uri",
