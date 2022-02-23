@@ -1,5 +1,6 @@
-enhanced-dpy>=1.7.3.7.post1
-databases[postgresql]>=0.4.3
-validator-collection>=1.5.0
+databases[mysql]
+validator-collection
 spotify-uri>=1.0.3
 pydantic>=1.8.2
+git+https://github.com/Pycord-Development/pycord.git
+yt-dlp

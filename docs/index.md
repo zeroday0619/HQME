@@ -4,8 +4,8 @@ High-quality music extension for [**discord.py**](https://github.com/Rapptz/disc
 
 ## Requirements
 
-- Requires PostgreSQL Server
-- Requires Python 3.8 or higher
+- Requires PostgreSQL or MySQL Server
+- Requires Python 3.10 or higher
 - [**Optional**] Requires PyPy 3.8 or higher
 
 ## Installing
