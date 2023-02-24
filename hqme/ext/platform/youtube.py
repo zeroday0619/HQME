@@ -88,6 +88,7 @@ class YouTube:
         loop = asyncio.get_running_loop()
         partial = functools.partial(self.ydl.extract_info, self.url, download=False)
         self.data = await loop.run_in_executor(None, partial)
+        self.data = self.data["data"]
 
     async def get_title(self) -> str:
         """
