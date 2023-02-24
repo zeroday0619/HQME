@@ -88,7 +88,6 @@ class YouTube:
         loop = asyncio.get_running_loop()
         partial = functools.partial(self.ydl.extract_info, self.url, download=False)
         self.data = await loop.run_in_executor(None, partial)
-        self.data = self.data["data"]
 
     async def get_title(self) -> str:
         """
@@ -97,14 +96,9 @@ class YouTube:
         Returns:
             The title of the video.
         """
-        global entries
         if self.data is None:
             await self.sync()
-
-        if "entries" in self.data:
-            entries = self.data["entries"][0]
-
-        _title = entries.get("title")
+        _title = self.data.get("fulltitle")
 
         if type(_title) is not str:
             raise TitleNotFound("No title of the video.")
@@ -119,14 +113,10 @@ class YouTube:
         Returns:
             The description of the video.
         """
-        global entries
         if self.data is None:
             await self.sync()
 
-        if "entries" in self.data:
-            entries = self.data["entries"]
-
-        _description = entries.get("description")
+        _description = self.data.get("description")
         if type(_description) is None:
             raise DescriptionNotFound("No description of the video.")
         else:
@@ -140,15 +130,10 @@ class YouTube:
         Returns:
             The duration of the video.
         """
-        global entries
-
         if self.data is None:
             await self.sync()
 
-        if "entries" in self.data:
-            entries = self.data["entries"][0]
-
-        _duration = entries.get("duration")
+        _duration = self.data.get("duration")
 
         if _duration is None:
             raise DurationNotFound("No duration of the video.")
@@ -163,14 +148,10 @@ class YouTube:
         Returns:
             The uploader of the video.
         """
-        global entries
         if self.data is None:
             await self.sync()
 
-        if "entries" in self.data:
-            entries = self.data["entries"][0]
-
-        _uploader = entries.get("uploader")
+        _uploader = self.data.get("uploader")
         if _uploader is None:
             raise UploaderNotFound("No uploader of the video.")
         else:
@@ -184,41 +165,16 @@ class YouTube:
         Returns:
             The upload date of the video.
         """
-        global entries
         if self.data is None:
             await self.sync()
 
-        if "entries" in self.data:
-            entries = self.data["entries"][0]
-
-        _upload_date = entries.get("upload_date")
+        _upload_date = self.data.get("upload_date")
 
         if _upload_date is None:
             raise UploadDateNotFound("No upload date of the video.")
         else:
             upload_date = str(_upload_date)
         return upload_date
-
-    async def get_upload_time(self) -> str:
-        """
-        Get the upload time of the video.
-
-        Returns:
-            The upload time of the video.
-        """
-        global entries
-        if self.data is None:
-            await self.sync()
-
-        if "entries" in self.data:
-            entries = self.data["entries"][0]
-
-        _upload_time = entries.get("upload_time")
-        if _upload_time is None:
-            raise UploadDateNotFound("No upload time of the video.")
-        else:
-            upload_time = str(_upload_time)
-        return upload_time
 
     async def get_thumbnail(self) -> str:
         """
@@ -227,14 +183,10 @@ class YouTube:
         Returns:
             The thumbnail of the video.
         """
-        global entries
         if self.data is None:
             await self.sync()
 
-        if "entries" in self.data:
-            entries = self.data["entries"][0]
-
-        _thumbnail = entries.get("thumbnail")
+        _thumbnail = self.data.get("thumbnail")
         if _thumbnail is None:
             raise ThumbnailNotFound("No thumbnail of the video.")
         else:
@@ -248,14 +200,10 @@ class YouTube:
         Returns:
             The view count of the video.
         """
-        global entries
         if self.data is None:
             await self.sync()
 
-        if "entries" in self.data:
-            entries = self.data["entries"][0]
-
-        _view_count = entries.get("view_count")
+        _view_count = self.data.get("view_count")
         if _view_count is None:
             raise ViewCountNotFound("No view count of the video.")
         else:
@@ -269,61 +217,15 @@ class YouTube:
         Returns:
             The like count of the video.
         """
-        global entries
         if self.data is None:
             await self.sync()
 
-        if "entries" in self.data:
-            entries = self.data["entries"][0]
-
-        _like_count = entries.get("like_count")
+        _like_count = self.data.get("like_count")
         if _like_count is None:
             raise LikeCountNotFound("No like count of the video.")
         else:
             like_count = int(_like_count)
         return like_count
-
-    async def get_dislike_count(self) -> int:
-        """
-        Get the dislike count of the video.
-
-        Returns:
-            The dislike count of the video.
-        """
-        global entries
-        if self.data is None:
-            await self.sync()
-
-        if "entries" in self.data:
-            entries = self.data["entries"][0]
-
-        dislike_count = entries.get("dislike_count")
-        if dislike_count is None:
-            raise DislikeCountNotFound("No dislike count of the video.")
-        else:
-            dislike_count = int(dislike_count)
-        return dislike_count
-
-    async def get_comment_count(self) -> int:
-        """
-        Get the comment count of the video.
-
-        Returns:
-            The comment count of the video.
-        """
-        global entries
-        if self.data is None:
-            await self.sync()
-
-        if "entries" in self.data:
-            entries = self.data["entries"][0]
-
-        _comment_count = entries.get("comment_count")
-        if _comment_count is None:
-            raise CommentCountNotFound("No comment count of the video.")
-        else:
-            comment_count = int(_comment_count)
-        return comment_count
 
     async def get_categories(self) -> list:
         """
@@ -336,10 +238,7 @@ class YouTube:
         if self.data is None:
             await self.sync()
 
-        if "entries" in self.data:
-            entries = self.data["entries"][0]
-
-        _categories = entries.get("categories")
+        _categories = self.data.get("categories")
         if _categories is None:
             raise CategoryNotFound("No categories of the video.")
         else:
@@ -357,10 +256,7 @@ class YouTube:
         if self.data is None:
             await self.sync()
 
-        if "entries" in self.data:
-            entries = self.data["entries"][0]
-
-        _tags = entries.get("tags")
+        _tags = self.data.get("tags")
         if _tags is None:
             raise TegsNotFound("No tags of the video.")
         else:
@@ -374,14 +270,10 @@ class YouTube:
         Returns:
             The uploader id of the video.
         """
-        global entries
         if self.data is None:
             await self.sync()
 
-        if "entries" in self.data:
-            entries = self.data["entries"][0]
-
-        _uploader_id = entries.get("uploader_id")
+        _uploader_id = self.data.get("uploader_id")
         if _uploader_id is None:
             raise UploaderIdNotFound("No uploader id of the video.")
         else:
@@ -395,14 +287,10 @@ class YouTube:
         Returns:
             The uploader url of the video.
         """
-        global entries
         if self.data is None:
             await self.sync()
 
-        if "entries" in self.data:
-            entries = self.data["entries"][0]
-
-        _uploader_url = entries.get("uploader_url")
+        _uploader_url = self.data.get("uploader_url")
         if _uploader_url is None:
             raise UploaderUrlNotFound("No uploader url of the video.")
         else:
@@ -416,14 +304,10 @@ class YouTube:
         Returns:
             The channel id of the video.
         """
-        global entries
         if self.data is None:
             await self.sync()
 
-        if "entries" in self.data:
-            entries = self.data["entries"][0]
-
-        _channel_id = entries.get("channel_id")
+        _channel_id = self.data.get("channel_id")
         if _channel_id is None:
             raise ChannelIdNotFound("No channel id of the video.")
         else:
@@ -437,40 +321,15 @@ class YouTube:
         Returns:
             The channel url of the video.
         """
-        global entries
         if self.data is None:
             await self.sync()
 
-        if "entries" in self.data:
-            entries = self.data["entries"][0]
-
-        _channel_url = entries.get("channel_url")
+        _channel_url = self.data.get("channel_url")
         if _channel_url is None:
             raise ChannelUrlNotFound("No channel url of the video.")
         else:
             channel_url = str(_channel_url)
         return channel_url
-
-    async def get_channel_title(self) -> str:
-        """
-        Get the channel title of the video.
-
-        Returns:
-            The channel title of the video.
-        """
-        global entries
-        if self.data is None:
-            await self.sync()
-
-        if "entries" in self.data:
-            entries = self.data["entries"][0]
-
-        _channel_title = entries.get("channel_title")
-        if _channel_title is None:
-            raise ChannelTitleNotFound("No channel title of the video.")
-        else:
-            channel_title = str(_channel_title)
-        return channel_title
 
     async def get_video_url(self) -> str:
         """
@@ -479,14 +338,9 @@ class YouTube:
         Returns:
             The video url of the video.
         """
-        global entries
         if self.data is None:
             await self.sync()
-
-        if "entries" in self.data:
-            entries = self.data["entries"][0]
-
-        _url = entries.get("url")
+        _url = self.data["requested_formats"][0]["url"]
         if _url is None:
             raise VideoUrlNotFound("No url of the video.")
         else:
