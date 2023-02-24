@@ -1,6 +1,7 @@
 databases[mysql]
 validator-collection
 spotify-uri>=1.0.3
-pydantic>=1.8.2
+pydantic>=1.10.5
 git+https://github.com/Pycord-Development/pycord.git
-youtubd-dl
+youtube-dl
+yt-dlp

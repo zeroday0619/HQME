@@ -24,7 +24,7 @@ from hqme.exceptions.youtube import (
     ViewCountNotFound,
 )
 from validator_collection.checkers import is_url
-from youtube_dl import YoutubeDL
+from yt_dlp import YoutubeDL
 
 youtube_dl.utils.bug_reports_message = lambda: ""
 yt_dl = YoutubeDL(params={})
