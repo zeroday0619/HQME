@@ -340,6 +340,12 @@ class YouTube:
         """
         if self.data is None:
             await self.sync()
+        
+        import json
+        print(json.dumps(self.data["requested_formats"], indent=4, ensure_ascii=False))
+
+        # not return mnifest_url
+        self.data["requested_formats"].reverse()
         _url = self.data["requested_formats"][0]["url"]
         if _url is None:
             raise VideoUrlNotFound("No url of the video.")
