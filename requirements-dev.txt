@@ -4,7 +4,7 @@ pytest==7.0.1
 pytest-cov==3.0.0
 pytest-asyncio==0.18.1
 mypy
-black==22.1.0
+black==24.3.0
 isort >= 5.0.6, < 6.0.0
 mkdocstrings>=0.15.2
 mkdocs-material==8.2.1
